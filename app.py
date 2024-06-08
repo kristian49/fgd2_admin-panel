@@ -5,14 +5,18 @@ from werkzeug.utils import secure_filename
 from datetime import datetime
 import os
 
-dotenv_path = join(dirname(__file__), '.env')
-load_dotenv(dotenv_path)
+# sudah dipindahkan ke file .env
+client = MongoClient('mongodb+srv://test:sparta@cluster0.6vz5zah.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
+db = client.fgd2
 
-MONGODB_URI = os.environ.get("MONGODB_URI")
-DB_NAME =  os.environ.get("DB_NAME")
+# dotenv_path = join(dirname(__file__), '.env')
+# load_dotenv(dotenv_path)
 
-client = MongoClient(MONGODB_URI)
-db = client[DB_NAME]
+# MONGODB_URI = os.environ.get("MONGODB_URI")
+# DB_NAME =  os.environ.get("DB_NAME")
+
+# client = MongoClient(MONGODB_URI)
+# db = client[DB_NAME]
 
 app = Flask(__name__)
 
